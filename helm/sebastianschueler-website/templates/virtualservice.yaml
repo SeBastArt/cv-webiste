@@ -1,0 +1,27 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: website-vs
+  namespace: {{ .Values.namespace.name }}
+spec:
+  hosts:
+  - {{ .Values.website.host }}
+  - {{ .Values.website.wwwHost }}
+  gateways:
+  - istio-system/ingress-gateway
+  http:
+  # Redirect www to non-www
+  - match:
+    - headers:
+        ":authority":
+          exact: {{ .Values.website.wwwHost }}
+    redirect:
+      authority: {{ .Values.website.host }}
+      redirectCode: 301
+  # Main routing
+  - route:
+    - destination:
+        host: website
+        subset: {{ .Values.website.version | default "v1" }}
+        port:
+          number: {{ .Values.website.port }}

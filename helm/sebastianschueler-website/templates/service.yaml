@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: website
+  namespace: {{ .Values.namespace.name }}
+  labels:
+    app: website
+    {{ include "sebastianschueler-website.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.website.port }}
+      targetPort: {{ .Values.website.targetPort }}
+      protocol: TCP
+      name: http
+  selector:
+    app: website
+    {{ include "sebastianschueler-website.selectorLabels" . | nindent 4 }}
