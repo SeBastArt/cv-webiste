@@ -3,6 +3,19 @@
  * Updated for 2025 best practices
  */
 
+/* Logo Styles */
+.site-logo .code-bracket {
+  color: var(--primary-color, #007bff);
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+.site-logo a:hover .code-bracket {
+  color: var(--primary-dark, #0056b3);
+  transform: scale(1.1);
+}
+
 /* CSS Custom Properties (Variables) */
 :root {
   /* Colors */
