@@ -64,7 +64,3 @@ spec:
         emptyDir: {}
       - name: var-run
         emptyDir: {}
-      {{- if .Values.website.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml .Values.website.imagePullSecrets | nindent 8 }}
-      {{- end }}
