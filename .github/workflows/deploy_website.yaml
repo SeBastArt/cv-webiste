@@ -10,9 +10,12 @@ on:
   push:
     branches:
       - main
+      - master
     paths-ignore:
       - 'README.md'
       - '**/*.md'
+      - 'DEPLOYMENT.md'
+      - 'CLAUDE.md'
 
 jobs:
   prepare:
@@ -59,7 +62,7 @@ jobs:
             --file Dockerfile \
             --tag sebastart/sebastianschueler-website:${{ needs.prepare.outputs.version }} \
             --tag sebastart/sebastianschueler-website:latest \
-            --output type=image,push=true
+            --push
 
   deploy:
     needs: [build, prepare]
@@ -77,11 +80,21 @@ jobs:
       - name: Configure Kubeconfig
         run: |
           mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+          echo "${{ secrets.KUBECONFIG }}" | base64 -d > $HOME/.kube/config
           chmod 600 $HOME/.kube/config
+      - name: Verify Kubernetes connection
+        run: |
+          kubectl cluster-info
+          kubectl get nodes
       - name: Deploy with Helm
         run: |
           helm upgrade --install sebastianschueler-website ./helm/sebastianschueler-website \
             --create-namespace \
             --namespace sebastianschueler \
-            --set website.imageVersion=${{ needs.prepare.outputs.version }}
+            --set website.imageVersion=${{ needs.prepare.outputs.version }} \
+            --wait \
+            --timeout=300s
+      - name: Verify deployment
+        run: |
+          kubectl get pods -n sebastianschueler
+          kubectl get services -n sebastianschueler
