@@ -12,14 +12,19 @@ spec:
   http:
   # Redirect www to non-www
   - match:
-    - headers:
-        ":authority":
+    - uri:
+        prefix: "/"
+      headers:
+        host:
           exact: {{ .Values.website.wwwHost }}
     redirect:
       authority: {{ .Values.website.host }}
       redirectCode: 301
   # Main routing
-  - route:
+  - match:
+    - uri:
+        prefix: "/"
+    route:
     - destination:
         host: website
         subset: {{ .Values.website.version | default "v1" }}

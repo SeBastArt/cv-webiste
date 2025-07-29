@@ -5,14 +5,12 @@ metadata:
   namespace: {{ .Values.namespace.name }}
   labels:
     app: website
-    {{ include "sebastianschueler-website.labels" . | nindent 4 }}
+      {{ include "sebastianschueler-website.labels" . | nindent 4 }}
 spec:
-  type: ClusterIP
-  ports:
-    - port: {{ .Values.website.port }}
-      targetPort: {{ .Values.website.targetPort }}
-      protocol: TCP
-      name: http
   selector:
     app: website
     {{ include "sebastianschueler-website.selectorLabels" . | nindent 4 }}
+  ports:
+    - name: http
+      port: {{ .Values.website.port }}
+      targetPort: {{ .Values.website.targetPort }}
