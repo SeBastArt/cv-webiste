@@ -40,3 +40,5 @@ nul
 # Example directories (used for reference, not deployed)
 .github_example/
 helm_example/
+.claude/
+CLAUDE.md
