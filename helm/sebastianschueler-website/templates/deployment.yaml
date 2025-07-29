@@ -29,13 +29,13 @@ spec:
           {{- if .Values.website.healthCheck.enabled }}
           livenessProbe:
             httpGet:
-              path: {{ .Values.website.healthCheck.path }}
+              path: /health
               port: http
             initialDelaySeconds: 30
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: {{ .Values.website.healthCheck.path }}
+              path: /health
               port: http
             initialDelaySeconds: 5
             periodSeconds: 5
@@ -45,10 +45,26 @@ spec:
           securityContext:
             runAsNonRoot: true
             runAsUser: 101
-            readOnlyRootFilesystem: true
+            runAsGroup: 101
             allowPrivilegeEscalation: false
             capabilities:
               drop:
                 - ALL
+          volumeMounts:
+          - name: tmp-volume
+            mountPath: /tmp
+          - name: var-cache-nginx
+            mountPath: /var/cache/nginx
+          - name: var-run
+            mountPath: /var/run
+      volumes:
+      - name: tmp-volume
+        emptyDir: {}
+      - name: var-cache-nginx
+        emptyDir: {}
+      - name: var-run
+        emptyDir: {}
+      {{- if .Values.website.imagePullSecrets }}
       imagePullSecrets:
-        - name: docker-container-registry
+        {{- toYaml .Values.website.imagePullSecrets | nindent 8 }}
+      {{- end }}

@@ -14,6 +14,10 @@ website:
   targetPort: 80
   version: "v1"
   
+  # Image pull secrets (optional)
+  # imagePullSecrets:
+  #   - name: docker-container-registry
+  
   # Resource limits and requests
   resources:
     requests:
@@ -23,11 +27,6 @@ website:
       memory: "128Mi"
       cpu: "100m"
   
-  # Health checks
-  healthCheck:
-    enabled: true
-    path: /
-    
   # Auto scaling
   autoscaling:
     enabled: false
