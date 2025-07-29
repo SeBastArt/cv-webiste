@@ -41,7 +41,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     env:
-      DOCKER_TARGET_PLATFORM: linux/amd64
+      DOCKER_TARGET_PLATFORM: linux/arm64
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
