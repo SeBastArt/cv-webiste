@@ -1,0 +1,63 @@
+/*========================
+    8. RESUME SECTION
+========================*/
+section.resume {
+    h3 {
+      font-size: 1.5em;
+    }
+  }
+  
+  .resume-list {
+    li {
+      position: relative;
+      padding: 0 15px 50px 40px;
+    }
+  
+    li:before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      position: absolute;
+      left: 3px;
+      top: 4px;
+    }
+  
+    li:after {
+      content: "";
+      position: absolute;
+    }
+  
+    li:last-child:after {
+      content: none;
+    }
+    h4 {
+      font-size: 18px;
+      font-family: inherit;
+    }
+  
+    span.time {
+      font-size: 0.875em;
+      opacity: 1;
+    }
+  }
+  
+  .skill {
+    .skill-icon {
+      font-size: 2.7em;
+      min-width: 60px;
+    }
+    .progresss-info span {
+      font-size: 16px;
+    }
+    .progress {
+      height: 6px;
+      border-radius: 0;
+      padding: 2px;
+    }
+  
+    .progress-bar {
+      width: 0;
+      transition: all 1.5s ease-in-out;
+    }
+  }

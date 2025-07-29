@@ -1,0 +1,17 @@
+/*==========================
+    12. FACTS SECTION
+===========================*/
+
+section.facts,
+div.section.facts {
+  .fact-single {
+    line-height: 1.5;
+    .fact-icon {
+      font-size: 3.5em;
+    }
+    .fact-info {
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+  }
+}

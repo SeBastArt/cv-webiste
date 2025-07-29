@@ -1,0 +1,112 @@
+/*=================
+    3. HEADER
+==================*/
+
+/* 3.1 General Header Style */
+
+header {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+    .site-logo {
+      a {
+        font-family: "Poppins", sans-serif;
+        font-size: 30px;
+      }
+    }
+  }
+  
+  /* 3.2 Horizontal Header Style */
+  header.horizontal_header {
+    width: 100%;
+    padding: 0;
+    transition: none;
+  
+    .header-ins {
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+  
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  
+      li {
+        margin-right: 0;
+        a {
+          padding: 5px 15px;
+          font-size: 1em;
+          position: relative;
+        }
+      }
+    }
+
+    /* 3.3 Mobile Toggler Button */
+  
+    .button-toggler {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      span {
+        display: block;
+        margin-bottom: 5px;
+        transition: all 0.3s ease-in-out;
+        width: 25px;
+        height: 2px;
+      }
+    
+      span:last-child {
+        margin-bottom: 0;
+      }
+    
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .button-toggler.pressed {
+
+      span {
+          width: 0;
+      }
+      span:first-child {
+          transform: translate(0, 7px) rotate(45deg);
+          width: 25px;
+      }
+      span:last-child {
+          transform: translate(0, -7px) rotate(-45deg);
+          width: 25px;
+      }
+  
+    }
+
+    
+
+  }
+  
+  @media (min-width: 992px) {
+    header.horizontal_header {
+      ul {
+        li {
+          a {
+            &:after {
+              content: "";
+              position: absolute;
+              height: 3px;
+              left: 50%;
+              bottom: -7px;
+              transition: all 0.3s ease-in-out;
+              transform: translate(-50%, 0) translateZ(0);
+              width: 0;
+            }
+            &:hover:after,
+            &.active:after {
+              width: calc(100% - 2.2em);
+            }
+          }
+        }
+      }
+    }
+  }

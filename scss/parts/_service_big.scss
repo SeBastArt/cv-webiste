@@ -1,0 +1,30 @@
+/*========================
+    6. SERVICE SECTION
+========================*/
+.service-single {
+    cursor: pointer;
+    &:hover {
+      .service-icon {
+        transform: scale(1.2);
+        
+      }
+    }
+    .service-icon {
+      font-size: 2.5em;
+      transition: all 0.3s ease-in-out;
+      display: inline-block;
+      i {
+        vertical-align: middle;
+      }
+    }
+  
+    h3 {
+      font-size: 1.5em;
+      font-weight: 500;
+    }
+  
+    p {
+      font-weight: 300;
+      min-height: 110px;
+    }
+  }

@@ -1,0 +1,159 @@
+/*======================
+    4. HOME SECTION
+======================*/
+
+section.home {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  
+    .background-particle {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  
+    /* 4.1 Parallax Element Positions */
+  
+    .background-parallax {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .element {
+        width: 0;
+        height: 0;
+        position: absolute;
+        animation-name: background-animation;
+        animation-duration: 5s;
+        animation-direction: alternate-reverse;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+        border-radius: 50%;
+  
+        &.element1 {
+          top: 24% !important;
+          left: 78% !important;
+          animation-delay: 1s;
+        }
+        &.element6 {
+          top: 80% !important;
+          left: 22% !important;
+          animation-delay: 0.5s;
+        }
+        &.element3 {
+          top: 61% !important;
+          left: 57% !important;
+          animation-delay: 0s;
+        }
+        &.element4 {
+          top: 79% !important;
+          left: 88% !important;
+          animation-delay: 0.5s;
+        }
+        &.element5 {
+          top: 23% !important;
+          left: 18% !important;
+          animation-delay: 1.7s;
+        }
+  
+        &.element2 {
+          top: 50% !important;
+          left: 37% !important;
+          animation-delay: 1.5s;
+        }
+      }
+    }
+  
+    h1 {
+      position: relative;
+      padding: 16px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        bottom: -5px;
+        right: -5px;
+      }
+    }
+  }
+  
+  /* 4.2 Background Animation Keyframe */
+  
+  @keyframes background-animation {
+    0% {
+      opacity: 0.4;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* 4.3 Introduction Area */
+  div.introduction {
+    margin: auto;
+    z-index: 10;
+    position: relative;
+  }
+  
+  h1 {
+    span {
+      display: inline-block;
+    }
+  }
+  
+  p.welcome_text {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  /* 4.4 Scroll Down Button */
+  .scroll-down {
+    position: absolute;
+    z-index: 10;
+    bottom: 40px;
+    width: 100%;
+    left: 0;
+    a {
+      display: block;
+    }
+    .scroll-title {
+      margin-bottom: 8px;
+    }
+    .scroll-mouse {
+      width: 30px;
+      height: 50px;
+      border-radius: 20px;
+      position: relative;
+      display: inline-block;
+      .whell {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        transform: translateX(-50%);
+        left: 50%;
+        top: 4px;
+        animation: scroll 1s linear 0.5s infinite backwards;
+      }
+    }
+  }
+  
+  @keyframes scroll {
+    0% {
+      top: 4px;
+      opacity: 1;
+    }
+    100% {
+      top: 21px;
+      opacity: 0;
+    }
+  }

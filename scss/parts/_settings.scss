@@ -1,0 +1,86 @@
+/*=================
+    1. SETTINGS
+==================*/
+  
+  ::selection {
+    background: rgba(166, 175, 189, 0.3);
+  }
+  
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    font-size: 32px;
+    position: relative;
+  }
+  h1, h2 {
+    letter-spacing: 2px;
+  }
+  p {
+    font-size: 1em;
+  }
+  a {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+    &:focus {
+      outline: none;
+    }
+  
+    &:before {
+      transition: all 0.3s ease-in-out;
+    }
+    &:after {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  
+  mark {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  article {
+    h2 {
+      font-weight: 400;
+      font-size: 2.5em;
+    }
+  }
+  
+  /* 1.1 Preloader */
+  
+  #preloader {
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+  
+    .loader {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+  
+  blockquote {
+    padding: 10px 20px;
+  
+    footer {
+      display: block;
+      font-size: 0.8em;
+    }
+  }
+
+  .img-fluid {
+    width: 100%;
+  }

@@ -1,0 +1,28 @@
+/*========================
+    10. BLOG SECTION
+========================*/
+.news-item {
+    .news-content {
+      .news-title {
+        min-height: 55px;
+        .blog-permalink {
+          h3 {
+            font-size: 1.375em;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+  
+      .news-meta-single {
+        font-size: 0.8125em;
+        span:not(.meta-value) {
+          opacity: 1;
+          margin-right: 0.5rem;
+        }
+        span.meta-value {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  

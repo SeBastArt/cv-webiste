@@ -1,0 +1,36 @@
+/*========================
+    7. PORTFOLIO SECTION
+========================*/
+.portfolio-filters {
+    a {
+      display: block;
+      padding: 10px 8px;
+    }
+  }
+  .portfolio-item {
+    .portfolio-single:hover {
+      text-decoration: none;
+      .item-details {
+        opacity: 1;
+      }
+    }
+    .item-box {
+      position: relative;
+      .item-details {
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        p {
+          opacity: 1;
+        }
+        span {
+          font-size: 2em;
+        }
+      }
+    }
+  }

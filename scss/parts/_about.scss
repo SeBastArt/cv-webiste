@@ -1,0 +1,22 @@
+/*======================
+    5. ABOUT SECTION
+======================*/
+
+section.about {
+    h3 {
+      font-size: 2em;
+    }
+    .avatar-area {
+      max-width: 400px;
+    }
+    .about-info {
+      span {
+        margin-left: 2px;
+      }
+      span.desc {
+        margin: 0;
+        font-weight: 600;
+        opacity: 1;
+      }
+    }
+  }

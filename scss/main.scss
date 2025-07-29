@@ -1,0 +1,99 @@
+/*---------------------------------------------------------------------------------------
+* Template Name      :  RectCV - Personal Bootstrap 4 HTML Template                      |
+* Author             :  Narek Sukiasyan                                                  |
+* Version            :  1.1.0                                                            |
+* Created            :  April 2020                                                       |
+* Updated            :  February 2021                                                    |
+* File Description   :  Main css file of the template                                    |
+*----------------------------------------------------------------------------------------
+*/
+
+
+/******************
+Table of Content
+
+    1. SETTINGS
+        1.1 Preloader
+    2. HELPER
+        2.1 Custom Alert
+        2.2 Buttons
+        2.3 SOCIAL ICONS
+        2.4 OWL SLIDER
+        2.5 RETURN TOP BUTTON
+    3. HEADER
+        3.1 General Header Style
+        3.2 Horizontal Header Style
+        3.3 Mobile Toggler Button
+    4. HOME SECTION
+        4.1 Parallax Element Positions
+        4.2 Background Animation Keyframe
+        4.3 Introduction Area
+        4.4 Scroll Down Button
+    5. ABOUT SECTION
+    6. SERVICE SECTION
+    7. PORTFOLIO SECTION
+    8. RESUME SECTION
+    9. TESTIMONIAL SECTION
+    10. BLOG SECTION
+    11. CONTACT SECTION
+    12. FACTS SECTION
+
+******************/
+
+//Importing Fonts
+
+
+/*Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/*Open Sans*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+
+
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+h1, h2 {
+    font-family: "Poppins", sans-serif;
+}
+
+
+//IMPORTING Settings
+@import 'parts/settings';
+
+//IMPORTING Helpers
+@import 'parts/helper';
+
+//IMPORTING Header
+@import 'parts/header';
+
+//IMPORTING Home
+@import 'parts/home';
+
+//IMPORTING About
+@import 'parts/about';
+
+//IMPORTING Service
+@import 'parts/service';
+
+//IMPORTING Portfolio
+@import 'parts/portfolio';
+
+//IMPORTING Resume
+@import 'parts/resume';
+
+//IMPORTING Testimonial
+@import 'parts/testimonial';
+
+//IMPORTING Testimonial
+@import 'parts/blog';
+
+//IMPORTING Contact
+@import 'parts/contact';
+
+//IMPORTING Contact
+@import 'parts/facts';
