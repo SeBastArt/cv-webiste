@@ -32,7 +32,7 @@ Dort finden Sie:
 - **Framework**: Bootstrap 5 für responsive Design
 - **Animationen**: AOS (Animate On Scroll), Particles.js
 - **Icons**: Font Awesome
-- **Deployment**: Docker + Kubernetes + Helm auf GCP
+- **Deployment**: Docker + Kubernetes + Github Actions
 
 ## Kontakt
 
